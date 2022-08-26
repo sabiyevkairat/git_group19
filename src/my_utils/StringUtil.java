@@ -95,6 +95,27 @@ public class StringUtil {
         return (third.containsAll(Arrays.asList(together)));
     }
 
+     /*
+    Guzel - Write a program to remove a given character from String
+     */
+
+
+    public static String removeCharacterFromString(String str, char a){
+        String result="";
+
+        for (int i=0; i<str.length(); i++){
+
+            if (str.charAt(i)!=a){
+                result+=str.charAt(i);
+            }
+        }
+
+        return result;
+    }
+
+
+
+
+
 
 }
-// END OF CODE.
