@@ -1,5 +1,8 @@
 package my_utils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class StringUtil {
     /*
         This class will be used to create String utility methods
