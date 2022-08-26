@@ -1,5 +1,8 @@
 package my_utils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class StringUtil {
     /*
         This class will be used to create String utility methods
@@ -76,6 +79,20 @@ public class StringUtil {
             ans = str.charAt(i - 1);
         }
         return ans;
+    }
+
+    /*
+    Kai - How to check if a String is a valid shuffle of two Strings?
+    I know this is not the right solution, just putting it out there to practice git
+     */
+
+    public static boolean validShuffle(String a, String b, String c) {
+
+        String aB = a + b;
+        String[] together = aB.split("");
+        ArrayList<String> third = new ArrayList<>(Arrays.asList(c.split("")));
+
+        return (third.containsAll(Arrays.asList(together)));
     }
 
 
