@@ -10,46 +10,74 @@ public class StringUtil {
     Genti: this method is made to solve the Problem 1: Find duplicate characters from String
      */
 
-    public static String findDuplicateChar(String str){
-        String duplicate="";
+    public static String findDuplicateChar(String str) {
+        String duplicate = "";
 
 
         for (int i = 0; i < str.length(); i++) {
-            int count=0;
+            int count = 0;
             for (int j = 0; j < str.length(); j++) {
-                if (str.charAt(j) == str.charAt(i)){
+                if (str.charAt(j) == str.charAt(i)) {
                     count++;
                 }
 
             }
-            if (count>1 && !duplicate.contains(""+str.charAt(i))){
-                duplicate+= str.charAt(i) + " ";
+            if (count > 1 && !duplicate.contains("" + str.charAt(i))) {
+                duplicate += str.charAt(i) + " ";
             }
         }
-return duplicate.trim();
+        return duplicate.trim();
     }
 
 
     /*
     Beyza - created a method to find the duplicate characters and their count in a given string - problem 6
      */
-    public static void countDuplicate(String word){
+    public static void countDuplicate(String word) {
 
         String duplicate = "";
 
-        for(int i = 0; i < word.length(); i++){
+        for (int i = 0; i < word.length(); i++) {
             int count = 0;
 
-            for(int j = 0; j < word.length(); j++){
-                if(word.charAt(i) == word.charAt(j)){
+            for (int j = 0; j < word.length(); j++) {
+                if (word.charAt(i) == word.charAt(j)) {
                     count++;
                 }
             }
-            if(count > 1 && !duplicate.contains("" + word.charAt(i))){
+            if (count > 1 && !duplicate.contains("" + word.charAt(i))) {
                 duplicate += word.charAt(i);
                 System.out.println(word.charAt(i) + ": " + count);
             }
         }
     }
 
+
+    /*
+    Burak - This method will return the highest occurred character in a string.
+     */
+
+    static char maxOccurringChar(String str) {
+        char ans = str.charAt(0);
+        int i, curr_freq = 0, max_freq = 0, n = str.length();
+        for (i = 1; i < n; i++) {
+            if (str.charAt(i) == str.charAt(i - 1)) {
+                curr_freq++;
+            } else {
+                if (max_freq < curr_freq) {
+                    max_freq = curr_freq;
+                    ans = str.charAt(i - 1);
+                }
+                curr_freq = 0;
+            }
+        }
+        if (max_freq < curr_freq) {
+            max_freq = curr_freq;
+            ans = str.charAt(i - 1);
+        }
+        return ans;
+    }
+
+
 }
+// END OF CODE.
