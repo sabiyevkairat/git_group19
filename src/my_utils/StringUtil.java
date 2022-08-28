@@ -27,7 +27,9 @@ public class StringUtil {
             }
         }
         return String.valueOf(Arrays.copyOf(str, index));
+
     }
+    // class is updated
 }
 
 
