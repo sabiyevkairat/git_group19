@@ -113,9 +113,19 @@ public class StringUtil {
         return result;
     }
 
+    /*Write a Java program to replace a given character in a String to other provided character, for example,
+     if you are asked to replace each blank in a String with %20
+     */
 
+    public static String replace20Percent(String str){
+        str = str.trim();
 
-
+        for(int i = 0; i < str.length(); i++){
+            if(str.charAt(i) == ' '){
+                str = str.replace(" ", "%20");
+            }
+        } return str;
+    }
 
 
 }
