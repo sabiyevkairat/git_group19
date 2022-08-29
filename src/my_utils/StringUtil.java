@@ -4,6 +4,7 @@ package my_utils;
 import java.util.ArrayList;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class StringUtil {
     /*
@@ -140,6 +141,28 @@ public class StringUtil {
         }
 
         return result;
+    }
+    public static void main(String[] args) {
+
+        System.out.println("Please type your word.System will check is it a Palindrome or not");
+
+        Scanner input = new Scanner(System.in);
+        String word = input.nextLine();
+        String reverse =(""); // reverse my string read it back from last index to first,backwards
+
+        for(int i = word.length() -1; i >= 0; i--){ // i is just a number. but using length -1 allow me to find the
+
+            reverse += word.charAt(i);
+
+        }
+        System.out.println(reverse);
+        if (word.equals(reverse)){
+            System.out.println("Palindrome");
+        }else {
+            System.out.println("It is not Palindrome");
+        }
+        System.out.println(word.equals(reverse) ?"Palindrome" : "It is not Palindrome");
+
     }
 
     /*Write a Java program to replace a given character in a String to other provided character, for example,
