@@ -128,4 +128,32 @@ public class StringUtil {
     }
 
 
+    // Deniz - Check if two strings are anagram of each other. Can include digits but ignore spaces, punctuation, and capitalization.
+    
+    public static boolean isAnagram(String str1, String str2){
+        str1 = str1.trim().toLowerCase();
+        str2 = str2.trim().toLowerCase();
+        String s1 = "";
+        String s2 = "";
+
+        for (int i = 0; i < str1.length(); i++) {
+            char x = str1.charAt(i);
+            if(Character.isDigit(x) || Character.isLowerCase(x))
+                s1 += "" + x;
+        }
+        for (int i = 0; i < str2.length(); i++) {
+            char x = str2.charAt(i);
+            if(Character.isDigit(x) || Character.isLowerCase(x))
+                s2 += "" + x;
+        }
+        char[] c1 = s1.toCharArray();
+        char[] c2 = s2.toCharArray();
+        Arrays.sort(c1);
+        Arrays.sort(c2);
+        if(Arrays.equals(c1,c2))
+            return true;
+        return false;
+    }
+
+
 }
