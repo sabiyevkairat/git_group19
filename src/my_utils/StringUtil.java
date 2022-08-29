@@ -112,9 +112,70 @@ public class StringUtil {
 
         return result;
     }
+    public static void main(String[] args) {
+
+        System.out.println("Please type your word.System will check is it a Palindrome or not");
+
+        Scanner input = new Scanner(System.in);
+        String word = input.nextLine();
+        String reverse =(""); // reverse my string read it back from last index to first,backwards
+
+        for(int i = word.length() -1; i >= 0; i--){ // i is just a number. but using length -1 allow me to find the
+
+            reverse += word.charAt(i);
+
+        }
+        System.out.println(reverse);
+        if (word.equals(reverse)){
+            System.out.println("Palindrome");
+        }else {
+            System.out.println("It is not Palindrome");
+        }
+        System.out.println(word.equals(reverse) ?"Palindrome" : "It is not Palindrome");
+
+    }
+
+    /*Write a Java program to replace a given character in a String to other provided character, for example,
+     if you are asked to replace each blank in a String with %20
+     */
+
+    public static String replace20Percent(String str){
+        str = str.trim();
+
+        for(int i = 0; i < str.length(); i++){
+            if(str.charAt(i) == ' '){
+                str = str.replace(" ", "%20");
+            }
+        } return str;
+    }
 
 
-//blsadfksdfhhf
+    // Deniz - Check if two strings are anagram of each other. Can include digits but ignore spaces, punctuation, and capitalization.
+
+    public static boolean isAnagram(String str1, String str2){
+        str1 = str1.trim().toLowerCase();
+        str2 = str2.trim().toLowerCase();
+        String s1 = "";
+        String s2 = "";
+
+        for (int i = 0; i < str1.length(); i++) {
+            char x = str1.charAt(i);
+            if(Character.isDigit(x) || Character.isLowerCase(x))
+                s1 += "" + x;
+        }
+        for (int i = 0; i < str2.length(); i++) {
+            char x = str2.charAt(i);
+            if(Character.isDigit(x) || Character.isLowerCase(x))
+                s2 += "" + x;
+        }
+        char[] c1 = s1.toCharArray();
+        char[] c2 = s2.toCharArray();
+        Arrays.sort(c1);
+        Arrays.sort(c2);
+        if(Arrays.equals(c1,c2))
+            return true;
+        return false;
+    }
 
 
 
