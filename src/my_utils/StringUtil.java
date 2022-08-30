@@ -181,7 +181,7 @@ public class StringUtil {
 
 
     // Deniz - Check if two strings are anagram of each other. Can include digits but ignore spaces, punctuation, and capitalization.
-    
+
     public static boolean isAnagram(String str1, String str2){
         str1 = str1.trim().toLowerCase();
         str2 = str2.trim().toLowerCase();
@@ -208,6 +208,25 @@ public class StringUtil {
     }
 
 
+// Zoubair- String to int conversion
+
+    public static void main(String[] args) {
+        double balance=1_000_000;
+        double amountToWithdraw= 500_000;
+
+        balance-=amountToWithdraw;// balance= balance-amountToWithdraw;
+        System.out.println("Withdrew "+ amountToWithdraw);
+
+
+        if (balance>=0){
+            System.out.println(" Account balance is: "+ balance);
+
+            if (balance<0){
+                System.out.println("overdraft penalty");
+                System.out.println("Penalty due: "+ amountToWithdraw*0.25);
+            }
+        }
+    }
 
 }
 
